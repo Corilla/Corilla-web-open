@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark-blue: #0B2C3E;
+  --color-brand-yellow: #F7D33A;
+  --color-brand-pink: #FF93FB;
+  --color-brand-light-grey: #F6F7F8;
+  --color-brand-grey: #D4D8DD;
+  --color-brand-dark-grey: #5F6F78;
+  --color-brand-home-grey: #fdfefe;
+
+  --font-sailec: 'Sailec-Regular', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  --font-sailec-medium: 'Sailec-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Sailec-Regular';
+  src: url('/fonts/sailec-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sailec-Medium';
+  src: url('/fonts/sailec-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "kern", "liga";
+  font-kerning: normal;
+  font-family: var(--font-sailec);
+  color: #0B2C3E;
+  background-color: #fff;
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sailec-medium);
+}
+
+h1 {
+  font-size: 2.441rem;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.953rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.563rem;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}

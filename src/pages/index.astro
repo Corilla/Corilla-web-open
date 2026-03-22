@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import WistiaVideo from '../components/WistiaVideo.astro';
+import PricingToggle from '../components/PricingToggle.astro';
+---
+
+<BaseLayout bodyClass="home" headerVariant="home">
+  <section id="hero">
+    <div class="section-content">
+      <div class="intro">
+        <div class="intro-content">
+          <h1>Collaboration & publishing for technical writers</h1>
+          <a class="button" href="https://app.corilla.com/register">
+            Start Writing <span class="arrow">⟶</span>
+          </a>
+        </div>
+      </div>
+      <img src="/assets/img/product-mockup.png" alt="Corilla product mockup" width="1002" height="708" />
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="section-content">
+      <h2>Corilla is built for intuitive content workflows</h2>
+      <p>A markdown editor with version control and hosting all in one.</p>
+
+      <div class="feature-container">
+        <FeatureCard
+          number="01/"
+          title="Markdown Editor"
+          description="A blazing fast markdown editor in the cloud. Built by technical writers to improve the UX of our daily content workflow and remove the complexity of actually writing."
+        />
+        <FeatureCard
+          number="02/"
+          title="Collaborative Authoring"
+          description="Same-page authoring and team draft links. Designed from the ground up to improve the collaboration between writers, developers and the entire organisation."
+        />
+        <FeatureCard
+          number="03/"
+          title="Version Control"
+          description="Maintain your content in a dedicated repository with powerful search and tagging plus the security of full version control. Freedom from duplicate files or ambiguous version names."
+        />
+        <FeatureCard
+          number="04/"
+          title="Structured authoring"
+          description="Modular content publishing allows you to choose your flavour of topic-based authoring and single sourcing to maximise content re-use. No more dead-end wikis."
+        />
+        <FeatureCard
+          number="05/"
+          title="Private team content"
+          description="Your internal documentation has never been more discoverable or dynamic. Company-wide private documentation or role-specific guides for new hires or reporting in just a few clicks."
+        />
+        <FeatureCard
+          number="06/"
+          title="Documentation hosting"
+          description="Unlimited documentation hosting with the option of custom domain, integrated publishing to external services or self-hosting. Write once and publish anywhere."
+        />
+      </div>
+
+      <div class="call-to-action">
+        <h3>"Corilla is the new technical writing. Our writers love it. Our customers read it."</h3>
+        <a class="button" href="https://app.corilla.com/register">
+          Start Writing <span class="arrow">⟶</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <WistiaVideo />
+
+  <PricingToggle />
+
+  <section id="marketing">
+    <div class="section-content">
+      <h2>Start writing more good*</h2>
+      <p>We bring the amazing workflow (*but you'll still need the amazing grammar).</p>
+      <a class="button" href="https://app.corilla.com/register">
+        Sign up for free <span class="arrow">⟶</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .home :global(.header-placeholder),
+  .home :global(header) {
+    background: #fdfefe;
+  }
+
+  .button {
+    font-family: 'Sailec-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    background: #F7D33A;
+    padding: 0.5em 1em;
+    padding-bottom: 0.4em;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .button:hover {
+    background: #0B2C3E;
+    color: #fff;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    display: inline-block;
+  }
+
+  .button:hover .arrow {
+    transform: translateX(0.5em);
+  }
+
+  #hero {
+    text-align: center;
+    background: linear-gradient(to bottom, #fdfefe, #f9fafa);
+  }
+
+  #hero .intro {
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #hero .intro-content h1 {
+    padding-bottom: 1.5em;
+    font-size: 2.441rem;
+    max-width: 540px;
+    margin: auto;
+    display: block;
+  }
+
+  #hero img {
+    width: 80%;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+  }
+
+  #features {
+    padding: 8em 0;
+    text-align: center;
+  }
+
+  #features h2 {
+    padding-bottom: 0.3em;
+  }
+
+  .section-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .feature-container {
+    padding: 6em 0 4em 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -2em;
+  }
+
+  .call-to-action {
+    text-align: center;
+  }
+
+  .call-to-action h3 {
+    padding-bottom: 2em;
+    max-width: 750px;
+    margin: auto;
+  }
+
+  #marketing {
+    padding-top: 0em;
+    padding-bottom: 4em;
+    text-align: center;
+  }
+
+  #marketing h2 {
+    padding-bottom: 0.3em;
+  }
+
+  #marketing p {
+    padding-bottom: 3em;
+  }
+</style>

@@ -1,0 +1,204 @@
+---
+import PriceCard from './PriceCard.astro';
+---
+
+<section id="pricing">
+  <div class="section-content">
+    <h2>Pricing and Plans</h2>
+    <p>Medium and Large plans start with a free 15 day trial.</p>
+
+    <div class="monthyeartoggle">
+      monthly
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="yearlyplanscheckbox" />
+        <label class="onoffswitch-label" for="yearlyplanscheckbox"></label>
+      </div>
+      yearly
+    </div>
+
+    <div class="pricing-options">
+      <PriceCard
+        name="Small"
+        description="A great choice for startups and small content teams. Unlimited hosting for your projects means both internal and public documentation."
+        price="0"
+        frequency="per <br> month"
+        featuresLabel="Features:"
+        features={['5 team members', 'Unlimited content', 'Unlimited hosting', 'Custom branding', 'Inline editor (coming soon)']}
+        ctaText="Choose Small"
+        ctaHref="https://app.corilla.com/register?plan=SMALL"
+      />
+      <PriceCard
+        id="mediumplan"
+        name="Medium"
+        description="Customised knowledge bases with your company's branding and a custom domain. And all the power of Corilla's unlimited hosting and collaboration."
+        price="45"
+        frequency="per <br> month"
+        featuresLabel="Small-tier plus:"
+        features={['Upgraded to 25 team members', 'Custom domain', 'Email support', 'Admin tools (coming soon)', 'Integrations (coming soon)']}
+        ctaText="Choose Medium"
+        ctaHref="https://app.corilla.com/register?plan=MEDIUM"
+      />
+      <PriceCard
+        id="largeplan"
+        name="Large"
+        description="The complete solution for your company's documentation. Unlimited hosting and collaboration across your entire corporate content suite."
+        price="270"
+        frequency="per <br> month"
+        featuresLabel="Medium-tier plus:"
+        features={['Upgraded to 100 team members', 'Custom styles', 'Phone support', 'Reporting tools (coming soon)', 'Content analytics (coming soon)']}
+        ctaText="Choose Large"
+        ctaHref="https://app.corilla.com/register?plan=LARGE"
+      />
+    </div>
+  </div>
+</section>
+
+<section id="custom">
+  <div class="section-content">
+    <h3>Looking for Extra Large?</h3>
+    <p>For enterprise and white label options, get in contact with us.</p>
+  </div>
+</section>
+
+<script>
+  const checkbox = document.getElementById('yearlyplanscheckbox') as HTMLInputElement;
+  checkbox?.addEventListener('change', (ev) => {
+    const yearly = (ev.target as HTMLInputElement).checked;
+    const freq = yearly ? 'per <br> year' : 'per <br> month';
+    const registerLink = 'https://app.corilla.com/register?plan=';
+
+    const medPlan = document.getElementById('mediumplan');
+    if (medPlan) {
+      const priceNum = medPlan.querySelector('.price-number');
+      const freqEl = medPlan.querySelector('.frequency');
+      const btn = medPlan.querySelector('.button') as HTMLAnchorElement;
+      if (priceNum) priceNum.textContent = yearly ? '450' : '45';
+      if (freqEl) freqEl.innerHTML = freq;
+      if (btn) btn.href = registerLink + (yearly ? 'MEDIUM_YEARLY' : 'MEDIUM');
+    }
+
+    const lgPlan = document.getElementById('largeplan');
+    if (lgPlan) {
+      const priceNum = lgPlan.querySelector('.price-number');
+      const freqEl = lgPlan.querySelector('.frequency');
+      const btn = lgPlan.querySelector('.button') as HTMLAnchorElement;
+      if (priceNum) priceNum.textContent = yearly ? '2700' : '270';
+      if (freqEl) freqEl.innerHTML = freq;
+      if (btn) btn.href = registerLink + (yearly ? 'LARGE_YEARLY' : 'LARGE');
+    }
+  });
+</script>
+
+<style>
+  #pricing {
+    padding: 8em 0 4em 0;
+    text-align: center;
+  }
+
+  #pricing h2 {
+    padding-bottom: 0.3em;
+  }
+
+  .section-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .monthyeartoggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3em 1em 0em 1em;
+  }
+
+  .onoffswitch {
+    position: relative;
+    width: 60px;
+    user-select: none;
+    margin: 0 0.8em;
+  }
+
+  .onoffswitch-checkbox {
+    display: none;
+  }
+
+  .onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    border: 2px solid #F2D800;
+    border-radius: 36px;
+    background-color: #F2D800;
+    transition: background-color 0.3s ease-in;
+  }
+
+  .onoffswitch-label::before {
+    content: "";
+    display: block;
+    width: 36px;
+    margin: 0px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 22px;
+    border: 2px solid #F2D800;
+    border-radius: 36px;
+    transition: all 0.3s ease-in 0s;
+  }
+
+  .onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #F2D800;
+  }
+
+  .onoffswitch-checkbox:checked + .onoffswitch-label,
+  .onoffswitch-checkbox:checked + .onoffswitch-label::before {
+    border-color: #F2D800;
+  }
+
+  .onoffswitch-checkbox:checked + .onoffswitch-label::before {
+    right: 0px;
+  }
+
+  .pricing-options {
+    padding-top: 4em;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #custom {
+    padding-top: 0em;
+    padding-bottom: 4em;
+    text-align: center;
+  }
+
+  #custom h3 {
+    padding-bottom: 0.3em;
+  }
+
+  #custom p {
+    padding-bottom: 3em;
+  }
+
+  @media screen and (max-width: 1210px) {
+    .section-content {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .pricing-options {
+      padding-left: 2em;
+      justify-content: flex-start;
+    }
+  }
+</style>

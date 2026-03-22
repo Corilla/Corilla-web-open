@@ -1,0 +1,103 @@
+---
+interface Props {
+  variant?: 'footer' | 'standalone';
+}
+
+const { variant = 'footer' } = Astro.props;
+const isFooter = variant === 'footer';
+---
+
+<form
+  id="mc-embedded-subscribe-form"
+  class:list={['validate', isFooter ? 'footer-form' : 'standalone-form']}
+  action="//corilla.us11.list-manage.com/subscribe/post?u=74294760fc0f23d4d652649da&amp;id=a083c38be0"
+  method="post"
+  name="mc-embedded-subscribe-form"
+  novalidate
+  target="_blank"
+>
+  <input
+    id="mce-EMAIL"
+    class:list={['required', 'email', isFooter ? 'footer-email-input' : 'standalone-email-input']}
+    name="EMAIL"
+    type="email"
+    placeholder="Your email address"
+  />
+  <div style="display:none">
+    <input name="b_74294760fc0f23d4d652649da_a083c38be0" tabindex="-1" type="text" value="" />
+  </div>
+  <input
+    id="mc-embedded-subscribe"
+    class:list={[isFooter ? 'footer-submit-btn' : 'standalone-submit-btn']}
+    name="subscribe"
+    type="submit"
+    value="⟶"
+    aria-label="Subscribe to newsletter"
+  />
+</form>
+<div id="mce-responses" class="clear">
+  <div id="mce-error-response" class="response" style="display:none"></div>
+  <div id="mce-success-response" class="response" style="display:none"></div>
+</div>
+
+<style>
+  .footer-email-input {
+    background: #0B2C3E;
+    border: 0;
+    padding: 0.5em 0;
+    font-family: 'Sailec-Regular', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    border-bottom: 2px solid #9AABB4;
+    width: 15em;
+    outline: none;
+    color: #9AABB4;
+  }
+
+  .footer-submit-btn {
+    background: #0B2C3E;
+    color: #9AABB4;
+    border: 0;
+    padding: 0.5em 0;
+    font-size: 1rem;
+    border-bottom: 2px solid #9AABB4;
+    outline: none;
+    transition: padding 0.3s ease;
+    cursor: pointer;
+    vertical-align: bottom;
+  }
+
+  .footer-submit-btn:hover {
+    padding-left: 0.3em;
+  }
+
+  .standalone-email-input {
+    background: #fff;
+    border: 0;
+    padding: 0.5em 0;
+    font-family: 'Sailec-Regular', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #5F6F78;
+    max-width: 20em;
+    width: 100%;
+    outline: none;
+    color: #5F6F78;
+  }
+
+  .standalone-submit-btn {
+    background: #fff;
+    color: #5F6F78;
+    border: 0;
+    padding: 0.5em 0 0.5em 0.5em;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #5F6F78;
+    outline: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    transform: translateX(-0.5em);
+    vertical-align: bottom;
+  }
+
+  .standalone-submit-btn:hover {
+    transform: translateX(0);
+  }
+</style>

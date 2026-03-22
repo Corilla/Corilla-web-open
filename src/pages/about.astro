@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamProfile from '../components/TeamProfile.astro';
+import CommunityProfile from '../components/CommunityProfile.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<BaseLayout bodyClass="about">
+  <section id="intro">
+    <div class="section-content">
+      <h1>"Corilla is the new technical writing."</h1>
+    </div>
+  </section>
+
+  <section id="explanation">
+    <div class="section-content">
+      <div class="images">
+        <img src="/assets/img/about-images.png" alt="About Corilla" />
+      </div>
+      <div class="text-block">
+        <h2 class="explanation-heading">Corilla started with single question. "How can we fix our publishing process?".</h2>
+        <p>In a forgotten corner of an office tucked away in Australia, a group of Red Hat technical writers were frustrated. The publishing process was broken, taking too long to use too many tools and too much effort to collaborate. The art of writing was lost under the overhead of workflow complexity.</p>
+        <p>So they began to build their own solution.</p>
+        <p>What began as an informal group turned into an internal startup. And what began as a private prototype for the team was soon requested by others, going into production to take over the majority of the company's global software documentation. And soon it wasn't just Red Hat teams wanting to simplify and bundle their authoring and publishing workflow.</p>
+        <p>Travelling internationally to share these insights at techcomms and software documentation conferences globally, Corilla cofounder David Ryan observed a common pattern. Technical writers were complaining about being forced to use tools that they disliked to create documentation that customers no longer read.</p>
+        <p>Customer support costs were increasing and companies were missing out on the power of collaboration between sales, support and product. Even more concerning, the major documentation products were ignoring the major advances in usability and machine learning. Content teams weren't just interested in the story of technical writers building an open source CMS, they were asking for a hosted solution.</p>
+        <p>It was at one of these conference that David first met Red Hat's cofounder and first CEO, Bob Young, who not only encouraged the team to spin out and tackle this full time, but came on board as an early investor and advisor. Shortly after the team packed its bags to join Google Launchpad in Paris, and then stayed on as the first international startup accepted into the NUMA Sprint Accelerator.</p>
+        <p>During the acceleration period the team discovered an incredible demand to bundle and simplify collaboration tools for technical writing. A very early beta soon snapped up over a 1000 teams in over 80 countries, highlighting the massive industry shift away from the complexity and elitism of DocBook XML formats and monolithic narrative books, and towards collaborative content generation using simplified markup like Markdown and AsciiDoc.</p>
+        <p>Graduating from the accelerator, Corilla has taken a seed round led by Bob Young's Hippo Ventures, expanded a fully remote team across Europe, the US and Australia, and come out of beta with a mission to be the future of technical content collaboration.</p>
+        <p>Corilla isn't just a new publishing tool. Corilla is the new technical writing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="section-content">
+      <div class="intro-text">
+        <h2>Meet our team</h2>
+        <p>What began as a handful of friendly Australians from sunny Brisbane has now spread to a global community. And we're hiring.</p>
+      </div>
+
+      <div class="profiles">
+        <TeamProfile
+          name="David Ryan"
+          role="Managing Director"
+          description="Take one career business analyst and technical writer and bake in the world's first billion dollar open source software company. Spin out as a startup with a side order of User Experience development."
+          twitterUrl="https://twitter.com/DaveDri"
+          linkedinUrl="https://www.linkedin.com/in/davedri"
+        />
+        <TeamProfile
+          name="Ton Ha"
+          role="Head of Design"
+          description="Product manager, brand strategist and multihyphenate designer. Veteran of multidisciplinary agency teams across commercial, for-purpose and enterprise projects."
+          twitterUrl="https://twitter.com/tdxha"
+          linkedinUrl="https://www.linkedin.com/in/tonha"
+        />
+        <TeamProfile
+          name="David Mason"
+          role="Senior Engineer"
+          description="Codes open source software for the web, and games for fun. Comfortable with the full stack: software, legos, cards, pancakes – take your pick."
+          twitterUrl="https://twitter.com/drdmason"
+          linkedinUrl="https://www.linkedin.com/in/drdmason"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="section-content">
+      <div class="intro-text">
+        <h2>Our community helps make it all possible</h2>
+        <p>Corilla is part of a global network of wonderful people who are building the future of technical writing and content collaboration.</p>
+      </div>
+
+      <div class="community-profiles">
+        <CommunityProfile name="Peter Laurie" description="One of Australia's leading mentors, armed with a rare mix of technical & business. An MBA disguised as a CTO." />
+        <CommunityProfile name="Ben Wilkinson" description="One of the original team to pack bags for Paris for the Corilla beta, surviving on a diet of UX and baguettes." />
+        <CommunityProfile name="Nina Wei" description="Formerly the senior design at Australia's Bigfish, Nina created the initial Corilla brand (and our excellent logo)." />
+        <CommunityProfile name="Nathan Koch" description="Full stack developer and software engineer with both international corporate and startup experience." />
+        <CommunityProfile name="Nick Plekhanov" description="The globetrotting front-end engineer with a passion for React and classic Russian literature." />
+        <CommunityProfile name="Jason Briscoe" description="The endlessly energetic Canadian designer that is equal parts creativity and enthusiasm." />
+        <CommunityProfile name="Luke Swetman" description="The former manager of the Queensland Microsoft Innovation Centre & early supporter of Corilla's mission." />
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="section-content">
+      <div class="intro-text">
+        <h2>Join our community</h2>
+        <p>We travel the world meeting the brightest minds in content and communication. You're welcome to join the conversation.</p>
+        <div class="form-wrapper">
+          <NewsletterForm variant="standalone" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  #intro .section-content {
+    height: 70vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  #intro h1 {
+    text-align: center;
+    max-width: 730px;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    #intro h1 {
+      font-size: 1.953rem;
+    }
+  }
+
+  #explanation .section-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 8em;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .images {
+    flex: 0.5 1 200px;
+    margin-right: 4em;
+  }
+
+  @media screen and (max-width: 920px) {
+    .images {
+      display: none;
+    }
+  }
+
+  .images img {
+    max-width: 100%;
+  }
+
+  .text-block {
+    max-width: 32em;
+  }
+
+  .explanation-heading {
+    font-size: 1.563rem;
+    padding-bottom: 1.5em;
+  }
+
+  .text-block p + p {
+    padding-top: 1em;
+  }
+
+  .section-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  #team {
+    padding-bottom: 8em;
+  }
+
+  #team .intro-text {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+  }
+
+  #team .intro-text h2 {
+    padding-bottom: 0.3em;
+  }
+
+  .profiles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4em;
+    justify-content: center;
+  }
+
+  #community {
+    padding-bottom: 4em;
+  }
+
+  #community .intro-text {
+    text-align: center;
+  }
+
+  #community .intro-text h2 {
+    padding-bottom: 0.3em;
+  }
+
+  #community .intro-text p {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .community-profiles {
+    padding-top: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -2em;
+  }
+
+  #join {
+    padding-bottom: 12em;
+  }
+
+  #join .intro-text {
+    text-align: center;
+  }
+
+  #join .intro-text h2 {
+    padding-bottom: 0.3em;
+  }
+
+  #join .intro-text p {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .form-wrapper {
+    padding-top: 4em;
+  }
+</style>

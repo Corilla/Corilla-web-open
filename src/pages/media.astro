@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout bodyClass="media">
+  <section id="intro">
+    <div class="section-content">
+      <div class="intro-container">
+        <h1>Media & Brand Assets</h1>
+        <p>We're glad that you're excited to talk about Corilla. The assets below are designed to help you quickly and easily use our marks and language in your work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="two-col marketing">
+    <div class="section-content">
+      <div class="left-col">
+        <h2 class="baseline-adjusted">Marketing Copy</h2>
+      </div>
+      <div class="right-col">
+        <h3 class="marketing-lead">Corilla is a collaborative authoring and publishing tool for content teams.</h3>
+        <p>We make content teams more productive by removing the complexity of creating and maintaining modular content that the entire company can reuse and deploy on-demand.</p>
+        <p>We make customer support teams happy by reducing the volume and cost of support by improving the availability and quality of user documentation. This means that technical writers love using Corilla to make content that customers actually read.</p>
+        <p>The magic of Corilla lies in streamlining the authoring and publishing experience into intuitive collaborative workflows. Corilla bundles a blazing-fast Markdown editor with version control and publishing to a hosted documentation portal in one.</p>
+        <p>As some of our users says, "Corilla is like GitHub for content teams".</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <section class="two-col logos">
+    <div class="section-content">
+      <div class="left-col">
+        <h2>Logos</h2>
+      </div>
+      <div class="right-col">
+        <div class="row border single">
+          <img src="/assets/img/corilla-logo-text.svg" alt="Corilla logo" />
+        </div>
+        <div class="row yellow single">
+          <img src="/assets/img/corilla-logo-text.svg" alt="Corilla logo on yellow" />
+        </div>
+        <div class="row">
+          <div class="cell border">
+            <img src="/assets/img/corilla-logo-text-under.svg" alt="Corilla logo stacked" />
+          </div>
+          <div class="cell yellow">
+            <img src="/assets/img/corilla-logo-text-under.svg" alt="Corilla logo stacked on yellow" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell border smaller">
+            <img src="/assets/img/corilla-logo-transparent-blue.svg" alt="Corilla logo blue" />
+          </div>
+          <div class="cell blue smaller">
+            <img src="/assets/img/corilla-logo-transparent.svg" alt="Corilla logo transparent" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <section class="two-col colours">
+    <div class="section-content">
+      <div class="left-col">
+        <h2>Colour Palette</h2>
+      </div>
+      <div class="right-col">
+        <div class="row">
+          <div class="swatch">
+            <div class="colour colour-yellow"></div>
+            <div class="name">Yellow</div>
+            <div class="code">#F7D33A</div>
+          </div>
+          <div class="swatch">
+            <div class="colour colour-dark-blue"></div>
+            <div class="name">Dark Blue</div>
+            <div class="code">#0B2C3E</div>
+          </div>
+          <div class="swatch">
+            <div class="colour colour-pink"></div>
+            <div class="name">Pink</div>
+            <div class="code">#FF93FB</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="swatch">
+            <div class="colour colour-dark-grey"></div>
+            <div class="name">Dark Grey</div>
+            <div class="code">#7F919A</div>
+          </div>
+          <div class="swatch">
+            <div class="colour colour-grey"></div>
+            <div class="name">Grey</div>
+            <div class="code">#D4D8DD</div>
+          </div>
+          <div class="swatch">
+            <div class="colour colour-light-grey"></div>
+            <div class="name">Light Grey</div>
+            <div class="code">#F6F7F8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="separator"></div>
+</BaseLayout>
+
+<style>
+  .section-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  #intro .section-content {
+    height: 70vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-container {
+    text-align: center;
+  }
+
+  .intro-container h1 {
+    padding-bottom: 0.3em;
+  }
+
+  @media screen and (max-width: 820px) {
+    .intro-container h1 {
+      font-size: 1.953rem;
+    }
+  }
+
+  .intro-container p {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .separator {
+    background: #F6F7F8;
+    height: 2px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 8em auto;
+  }
+
+  .two-col .section-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .two-col .section-content {
+      flex-wrap: wrap;
+    }
+  }
+
+  .left-col {
+    margin-right: 8em;
+  }
+
+  .left-col h2 {
+    padding-bottom: 0.5em;
+  }
+
+  .baseline-adjusted {
+    margin-top: -0.4em;
+  }
+
+  @media screen and (max-width: 900px) {
+    .left-col {
+      padding-bottom: 2em;
+      max-width: 28em;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  .right-col {
+    flex: 1 0 50%;
+    max-width: 28em;
+  }
+
+  .marketing-lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-bottom: 0.5em;
+  }
+
+  .right-col p {
+    color: #5F6F78;
+  }
+
+  .right-col p + p {
+    padding-top: 1em;
+  }
+
+  /* Logo rows */
+  .border {
+    border: 2px solid #F6F7F8;
+  }
+
+  .yellow {
+    background: #F7D33A;
+  }
+
+  .blue {
+    background: #0B2C3E;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row.single {
+    padding: 2em;
+  }
+
+  .row.single img {
+    height: 5em;
+  }
+
+  .row + .row {
+    margin-top: 0.5em;
+  }
+
+  .row img {
+    max-width: 100%;
+    height: 7em;
+  }
+
+  .cell {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+
+  .cell.smaller {
+    padding: 3.5em;
+  }
+
+  .cell.smaller img {
+    height: 5em;
+  }
+
+  .cell + .cell {
+    margin-left: 0.5em;
+  }
+
+  /* Colour swatches */
+  .swatch {
+    width: 33%;
+    padding: 0;
+  }
+
+  .swatch + .swatch {
+    margin-left: 0.5em;
+  }
+
+  .colour {
+    padding-top: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .colour-yellow { background: #F7D33A; }
+  .colour-dark-blue { background: #0B2C3E; }
+  .colour-pink { background: #FF93FB; }
+  .colour-dark-grey { background: #7F919A; }
+  .colour-grey { background: #D4D8DD; }
+  .colour-light-grey { background: #F6F7F8; }
+
+  .code {
+    color: #5F6F78;
+    padding-bottom: 1em;
+  }
+</style>

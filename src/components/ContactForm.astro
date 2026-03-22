@@ -1,0 +1,81 @@
+---
+interface Props {
+  messagePlaceholder?: string;
+}
+
+const { messagePlaceholder = 'Message' } = Astro.props;
+---
+
+<form class="contact-form" method="post" action="https://formspree.io/f/hello@corilla.com">
+  <input type="hidden" name="_next" value="/thanks" />
+  <input type="hidden" name="_subject" value="Website Contact" />
+  <input type="text" name="_gotcha" style="display:none" />
+
+  <input id="name" class="input input-text" type="text" name="name" placeholder="Your Name" />
+  <input id="email" class="input input-text" type="email" name="_replyto" placeholder="Your Email" />
+  <input id="subject" class="input input-text" type="text" name="subject" placeholder="Subject" />
+
+  <textarea id="message" class="input input-textarea" cols="40" rows="10" name="message" placeholder={messagePlaceholder}></textarea>
+
+  <button class="submit-btn" type="submit">
+    Submit <span class="arrow">⟶</span>
+  </button>
+</form>
+
+<style>
+  .contact-form {
+    width: 100%;
+    max-width: 35em;
+    margin: auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 1rem;
+    background: #fff;
+    outline: 0;
+    border: 2px solid #F6F7F8;
+    border-radius: 2px;
+    padding: 1em;
+    color: #0B2C3E;
+    font-family: 'Sailec-Regular', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  }
+
+  .contact-form input + input {
+    margin-top: 1em;
+  }
+
+  .contact-form textarea {
+    margin-top: 1em;
+    line-height: 1.7;
+    margin-bottom: 1em;
+  }
+
+  .submit-btn {
+    background: #F7D33A;
+    padding: 0.5em 1em 0.5em;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    border: 0;
+    font-size: 1.25rem;
+    font-family: 'Sailec-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    color: #0B2C3E;
+  }
+
+  .submit-btn:hover {
+    background: #0B2C3E;
+    color: #fff;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    display: inline-block;
+  }
+
+  .submit-btn:hover .arrow {
+    transform: translateX(0.5em);
+  }
+</style>

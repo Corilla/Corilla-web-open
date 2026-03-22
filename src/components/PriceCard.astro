@@ -1,0 +1,134 @@
+---
+interface Props {
+  id?: string;
+  name: string;
+  description: string;
+  price: string;
+  frequency: string;
+  featuresLabel: string;
+  features: string[];
+  ctaText: string;
+  ctaHref: string;
+}
+
+const { id, name, description, price, frequency, featuresLabel, features, ctaText, ctaHref } = Astro.props;
+---
+
+<div id={id} class="price-option">
+  <div class="description">
+    <h3>{name}</h3>
+    <p>{description}</p>
+    <div class="price">
+      <span class="currency">$</span>
+      <span class="price-number">{price}</span>
+      <span class="frequency" set:html={frequency} />
+    </div>
+    <h4>{featuresLabel}</h4>
+    <p></p>
+    <ul>
+      {features.map((f) => <li>{f}</li>)}
+    </ul>
+  </div>
+  <a class="button" href={ctaHref}>{ctaText}</a>
+</div>
+
+<style>
+  .price-option {
+    padding: 0.75em;
+    border: 2px solid #D4D8DD;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: center;
+    width: 18em;
+    border-radius: 2px;
+  }
+
+  .price-option + :global(.price-option) {
+    margin-left: 2em;
+  }
+
+  .description {
+    padding-top: 2em;
+    font-size: 0.9em;
+  }
+
+  .description h3 {
+    padding-bottom: 0.5em;
+  }
+
+  .description p {
+    color: #5F6F78;
+    width: 95%;
+    margin: auto;
+    display: block;
+    padding-bottom: 2em;
+    font-size: 0.9em;
+  }
+
+  .price {
+    padding-bottom: 2em;
+    padding-left: 2em;
+  }
+
+  .currency {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.25rem;
+    padding-top: 0.4em;
+    padding-right: 0.2em;
+  }
+
+  .price-number {
+    display: inline-block;
+    vertical-align: baseline;
+    font-size: 3.052rem;
+    font-family: 'Sailec-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  }
+
+  .frequency {
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: left;
+    color: #5F6F78;
+    font-size: 0.8em;
+    padding-left: 0.3em;
+  }
+
+  ul {
+    padding-bottom: 2em;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-bottom: 2em;
+  }
+
+  li {
+    padding-bottom: 1em;
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    background: #F7D33A;
+    padding: 0.5em 1em;
+    padding-bottom: 0.4em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Sailec-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  }
+
+  .button:hover {
+    background: #0B2C3E;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 1210px) {
+    .price-option {
+      width: 17em;
+    }
+  }
+</style>

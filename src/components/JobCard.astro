@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+}
+
+const { title, description, url } = Astro.props;
+---
+
+<div class="job">
+  <h3 class="job-title">{title}</h3>
+  <p>{description}</p>
+  <a class="apply" href={url}>
+    Learn more <span class="arrow">⟶</span>
+  </a>
+</div>
+
+<style>
+  .job {
+    border: 2px solid #F6F7F8;
+    border-radius: 2px;
+    max-width: 25em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    padding: 2em;
+    padding-bottom: 1.8em;
+  }
+
+  .job-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-bottom: 0.5em;
+  }
+
+  p {
+    padding-bottom: 1.5em;
+  }
+
+  .apply .arrow {
+    display: inline-block;
+    transition: margin 0.3s ease;
+  }
+
+  .apply:hover {
+    box-shadow: 0 2px 0 #0B2C3E;
+  }
+
+  .apply:hover .arrow {
+    margin-left: 0.5em;
+  }
+</style>

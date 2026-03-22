@@ -1,0 +1,13 @@
+# build
+dist/
+.vercel/
+
+# deps
+node_modules/
+
+# OS
+.DS_Store
+
+# editor
+*.swp
+*.swo

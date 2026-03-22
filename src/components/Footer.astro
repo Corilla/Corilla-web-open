@@ -1,0 +1,192 @@
+---
+import NewsletterForm from './NewsletterForm.astro';
+import Twitter from './icons/Twitter.astro';
+import Facebook from './icons/Facebook.astro';
+import LinkedIn from './icons/LinkedIn.astro';
+---
+
+<section id="footer">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="/assets/img/corilla-logo-transparent.svg" alt="Corilla" width="80" height="80" />
+    </div>
+
+    <div class="statement-links">
+      <div class="statement">
+        <h2>Corilla loves <span class="highlighted">technical writing.</span></h2>
+      </div>
+
+      <div class="links">
+        <div class="stack">
+          <h3 class="footer-heading">Product</h3>
+          <ul>
+            <li><a class="features" title="Explore our Features" href="/#features">Features</a></li>
+            <li><a class="pricing" title="Pricing" href="/#pricing">Pricing</a></li>
+            <li><a href="http://read.corilla.com/Corilla/Corilla-User-Guide.html">Documentation</a></li>
+            <li><a href="http://read.corilla.com/Corilla/Release-Notes.html">What's New</a></li>
+          </ul>
+        </div>
+
+        <div class="stack">
+          <h3 class="footer-heading">Community</h3>
+          <ul>
+            <li><a href="https://corillacommunity.herokuapp.com/">Slack</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="http://read.corilla.com/Corilla/Legal.html">Privacy Policy</a></li>
+            <li><a href="http://read.corilla.com/Corilla/Legal.html">Terms & Services</a></li>
+          </ul>
+        </div>
+
+        <div class="stack">
+          <h3 class="footer-heading">Company</h3>
+          <ul>
+            <li><a href="/media">Media</a></li>
+            <li><a href="/jobs">Careers</a></li>
+            <li><a href="/about">Our Story</a></li>
+            <li><a href="http://blog.corilla.com">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="stack form-stack">
+          <h3 class="footer-heading">Join the community</h3>
+          <NewsletterForm variant="footer" />
+          <nav class="social-links">
+            <a href="https://twitter.com/corilla" rel="nofollow" target="_blank" title="Twitter" aria-label="Corilla on Twitter">
+              <Twitter />
+            </a>
+            <a href="https://www.facebook.com/teamcorilla" rel="nofollow" target="_blank" title="Facebook" aria-label="Corilla on Facebook">
+              <Facebook />
+            </a>
+            <a href="https://www.linkedin.com/company/corilla" rel="nofollow" target="_blank" title="Linkedin" aria-label="Corilla on LinkedIn">
+              <LinkedIn />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #footer {
+    background: #0B2C3E;
+    padding: 8em 0;
+    color: #fff;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .logo {
+    align-self: flex-start;
+  }
+
+  .logo img {
+    width: 5em;
+    display: block;
+    margin-top: -0.5em;
+  }
+
+  .statement-links {
+    padding-left: 5em;
+  }
+
+  .statement {
+    padding-bottom: 3em;
+  }
+
+  .statement h2 {
+    max-width: 15em;
+  }
+
+  .highlighted {
+    color: #F7D33A;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stack {
+    text-align: left;
+    width: 12em;
+    padding-bottom: 2em;
+  }
+
+  .footer-heading {
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+  }
+
+  .stack ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .stack ul li {
+    padding-bottom: 0.3em;
+  }
+
+  .stack ul li a {
+    color: #9AABB4;
+  }
+
+  .stack ul li a:hover {
+    box-shadow: 0 1.5px 0 #9AABB4;
+  }
+
+  .form-stack {
+    width: 20em;
+    overflow: hidden;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2em;
+  }
+
+  .social-links a {
+    width: 1.5em;
+  }
+
+  .social-links a + a {
+    margin-left: 1em;
+  }
+
+  .social-links a :global(svg) {
+    fill: #fff;
+    transition: fill 0.3s ease;
+  }
+
+  .social-links a:hover :global(svg) {
+    fill: #F7D33A;
+  }
+
+  @media screen and (max-width: 1250px) {
+    .footer-content {
+      flex-direction: column;
+    }
+
+    .logo img {
+      margin-bottom: 2em;
+    }
+
+    .statement-links {
+      padding-left: 0;
+    }
+  }
+</style>

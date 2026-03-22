@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import JobCard from '../components/JobCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout bodyClass="jobs">
+  <section id="intro">
+    <div class="section-content">
+      <div class="intro-container">
+        <h1>We're building the world's most intuitive content collaboration and management tools. And you're invited.</h1>
+      </div>
+    </div>
+  </section>
+
+  <section id="explanation">
+    <div class="section-content">
+      <div class="images">
+        <img src="/assets/img/jobs-images.png" alt="Jobs at Corilla" />
+      </div>
+      <div class="text-block">
+        <p>Corilla began as a fully remote company. Just like our customers, we went global from day one. We know that the best teams find a way to balance their lifestyle to do their best work while being the best version of themselves.</p>
+        <p>Working at Corilla means working with some of the leading talent in content publishing, technical writing, and software development on the planet.</p>
+        <p>We're ambitious and conscious that there's no greater time to solve the problems of collaboration and knowledge management than right now. And we both look for and attract people that share that ambition to make a difference.</p>
+        <p>If this sounds like you, drop us a line and let's collaborate.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="positions">
+    <div class="section-content">
+      <h2>Open Positions</h2>
+      <div class="jobs-grid">
+        <JobCard title="Front-end Developer" description="You love the convergence of design and code, are all over React, and love to build clean and inuitive workflows." url="https://angel.co/corilla/jobs/" />
+        <JobCard title="UX Developer/Designer" description="You love making things that matter even more than you love Sketch, understand the latest design patterns, and fight for user." url="https://angel.co/corilla/jobs/" />
+        <JobCard title="Backend Developer" description="Got Java? Great. Whether you come from an enterprise or startup background you love to ship maintainable and sturdy code." url="https://angel.co/corilla/jobs/" />
+        <JobCard title="Product Manager" description="You're looking for a great product that can become an amazing product. You're all about team, users, community, testing and creativity." url="https://angel.co/corilla/jobs/" />
+        <JobCard title="Content Strategist" description="You're an incredible writer with a passion for publishing tools. Obviously. But you're also intent on creating and tracking content that matters." url="https://angel.co/corilla/jobs/" />
+        <JobCard title="Intern - Developer" description="You COULD go intern at that bank, but... haha no, don't do that. Leapfrog your career and come work with a team that used to build operating systems and now hustle like a startup." url="https://angel.co/corilla/jobs/" />
+        <JobCard title="Intern - Designer" description="Want to work within a design culture with a global audience? Want to contribute meaningfully and even own your own project? Want to take risks and build your own brand?" url="https://angel.co/corilla/jobs/" />
+        <JobCard title="Intern - Content Strategist" description="Can you imagine a better internship than a digital publishing startup full of award-winning content talent, with all the best tools, and most opportunity to learn and own your own projects?" url="https://angel.co/corilla/jobs/" />
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-content">
+      <div class="intro-text">
+        <h2>Contact Corilla!</h2>
+        <p>Use the form below to get in touch. We're also very easy to find on the internet, prioritise network referrals, and strongly recommend actually using Corilla first.</p>
+      </div>
+      <ContactForm messagePlaceholder="Tell us a bit about yourself, and why you want to work with us..." />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  #intro .section-content {
+    height: 70vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-container {
+    text-align: center;
+  }
+
+  .intro-container h1 {
+    padding-bottom: 0.3em;
+  }
+
+  @media screen and (max-width: 820px) {
+    .intro-container h1 {
+      font-size: 1.953rem;
+    }
+  }
+
+  #explanation .section-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 8em;
+  }
+
+  .images {
+    flex: 0.5 1 200px;
+    margin-right: 4em;
+  }
+
+  @media screen and (max-width: 920px) {
+    .images {
+      display: none;
+    }
+  }
+
+  .images img {
+    max-width: 100%;
+  }
+
+  .text-block {
+    max-width: 32em;
+  }
+
+  .text-block p + p {
+    padding-top: 1em;
+  }
+
+  #positions {
+    padding-bottom: 8em;
+  }
+
+  #positions h2 {
+    padding-bottom: 2em;
+    text-align: center;
+  }
+
+  .jobs-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: -2em;
+  }
+
+  #contact {
+    padding-bottom: 8em;
+    text-align: center;
+  }
+
+  .intro-text {
+    padding-bottom: 4em;
+  }
+
+  .intro-text h2 {
+    padding-bottom: 0.3em;
+  }
+
+  .intro-text p {
+    max-width: 700px;
+    margin: auto;
+  }
+</style>

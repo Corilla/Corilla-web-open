@@ -1,0 +1,58 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  twitterImage?: string;
+  bodyClass?: string;
+  headerVariant?: 'home' | 'default';
+}
+
+const {
+  title = 'Corilla: collaborative publishing tools for technical writers',
+  description = 'Corilla solves the problem of authoring, managing and maintaining documentation in the cloud and at scale.',
+  ogTitle = 'Corilla is a collaborative publishing tool for technical writers',
+  ogDescription = 'Corilla solves the problem of writing and maintaining documentation.',
+  ogImage = '/img/share-facebook-160306.jpg',
+  twitterImage = '/img/share-twitter-160306.jpg',
+  bodyClass = '',
+  headerVariant = 'default',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/favicon.png?v=2.0" rel="shortcut icon" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:site_name" content="Corilla" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://corilla.com" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@corilla" />
+    <meta name="twitter:creator" content="@corilla" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={twitterImage} />
+  </head>
+  <body class={bodyClass}>
+    <Header variant={headerVariant} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

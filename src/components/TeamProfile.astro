@@ -1,0 +1,82 @@
+---
+import Twitter from './icons/Twitter.astro';
+import LinkedIn from './icons/LinkedIn.astro';
+
+interface Props {
+  name: string;
+  role: string;
+  description: string;
+  twitterUrl: string;
+  linkedinUrl: string;
+}
+
+const { name, role, description, twitterUrl, linkedinUrl } = Astro.props;
+---
+
+<div class="profile">
+  <div class="name-row">
+    <div class="name">
+      <h3 class="profile-name">{name}</h3>
+    </div>
+    <div class="links">
+      <a href={twitterUrl} rel="nofollow" target="_blank" title="Twitter">
+        <Twitter />
+      </a>
+      <a href={linkedinUrl} rel="nofollow" target="_blank" title="LinkedIn">
+        <LinkedIn />
+      </a>
+    </div>
+  </div>
+  <div class="role">{role}</div>
+  <div class="desc">{description}</div>
+</div>
+
+<style>
+  .profile {
+    width: 17em;
+  }
+
+  .profile + :global(.profile) {
+    margin-left: 4em;
+  }
+
+  .name-row {
+    padding-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .name {
+    font-size: 1.25rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .links a + a {
+    margin-left: 0.5em;
+  }
+
+  .links a :global(svg) {
+    width: 1em;
+    fill: #D4D8DD;
+  }
+
+  .role {
+    color: #5F6F78;
+  }
+
+  .desc {
+    padding-top: 1em;
+  }
+</style>

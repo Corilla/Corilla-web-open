@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout bodyClass="body-thanks">
+  <section id="intro">
+    <div class="section-content">
+      <h1>A <span class="highlight">sitemap</span> is a great way to find out where you <span class="highlight">are,</span> and where you're <span class="highlight">going.</span></h1>
+      <ul>
+        <li><a href="/" title="Home">Corilla Homepage</a></li>
+        <li><a href="/about" title="About the Team">About the Team</a></li>
+        <li><a href="/media" title="Media and Brand Assets">Media</a></li>
+        <li><a href="/jobs" title="Join the Corilla Team">Jobs</a></li>
+        <li><a href="/contact" title="Contact">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  #intro {
+    padding: 8em 2em;
+    text-align: center;
+  }
+
+  .section-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h1 {
+    max-width: 700px;
+    margin: 0 auto 2em;
+  }
+
+  .highlight {
+    color: #F7D33A;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 0.5em 0;
+  }
+
+  li a:hover {
+    box-shadow: 0 2px 0 #0B2C3E;
+  }
+</style>
