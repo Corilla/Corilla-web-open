@@ -1,9 +1,14 @@
 # build
 dist/
 .vercel/
+.astro/
 
 # deps
 node_modules/
+
+# tool state
+.claude/
+.playwright-mcp/
 
 # OS
 .DS_Store
