@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import FeatureCard from '../components/FeatureCard.astro';
 import WistiaVideo from '../components/WistiaVideo.astro';
 import PricingToggle from '../components/PricingToggle.astro';
+import productMockup from '../assets/img/product-mockup.png';
 ---
 
 <BaseLayout bodyClass="home" headerVariant="home">
@@ -16,7 +18,14 @@ import PricingToggle from '../components/PricingToggle.astro';
           </a>
         </div>
       </div>
-      <img src="/assets/img/product-mockup.png" alt="Corilla product mockup" width="1002" height="708" />
+      <Image
+        src={productMockup}
+        alt="Corilla product mockup"
+        widths={[500, 700, 1002, productMockup.width]}
+        sizes="(max-width: 800px) 90vw, 700px"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
   </section>
 

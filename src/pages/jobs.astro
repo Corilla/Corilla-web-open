@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import JobCard from '../components/JobCard.astro';
 import ContactForm from '../components/ContactForm.astro';
+import jobsImages from '../assets/img/jobs-images.png';
 ---
 
 <BaseLayout bodyClass="jobs">
@@ -16,7 +18,13 @@ import ContactForm from '../components/ContactForm.astro';
   <section id="explanation">
     <div class="section-content">
       <div class="images">
-        <img src="/assets/img/jobs-images.png" alt="Jobs at Corilla" />
+        <Image
+          src={jobsImages}
+          alt="Jobs at Corilla"
+          widths={[300, jobsImages.width]}
+          sizes="(max-width: 920px) 100vw, 300px"
+          loading="lazy"
+        />
       </div>
       <div class="text-block">
         <p>Corilla began as a fully remote company. Just like our customers, we went global from day one. We know that the best teams find a way to balance their lifestyle to do their best work while being the best version of themselves.</p>
