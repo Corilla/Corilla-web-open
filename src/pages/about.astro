@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import TeamProfile from '../components/TeamProfile.astro';
 import CommunityProfile from '../components/CommunityProfile.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import aboutImages from '../assets/img/about-images.png';
 ---
 
 <BaseLayout bodyClass="about">
@@ -15,7 +17,13 @@ import NewsletterForm from '../components/NewsletterForm.astro';
   <section id="explanation">
     <div class="section-content">
       <div class="images">
-        <img src="/assets/img/about-images.png" alt="About Corilla" />
+        <Image
+          src={aboutImages}
+          alt="About Corilla"
+          widths={[300, aboutImages.width]}
+          sizes="(max-width: 920px) 100vw, 300px"
+          loading="lazy"
+        />
       </div>
       <div class="text-block">
         <h2 class="explanation-heading">Corilla started with single question. "How can we fix our publishing process?".</h2>
