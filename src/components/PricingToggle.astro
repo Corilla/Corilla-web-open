@@ -8,12 +8,13 @@ import PriceCard from './PriceCard.astro';
     <p>Medium and Large plans start with a free 15 day trial.</p>
 
     <div class="monthyeartoggle">
-      monthly
+      <span>Monthly</span>
       <div class="onoffswitch">
         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="yearlyplanscheckbox" />
         <label class="onoffswitch-label" for="yearlyplanscheckbox"></label>
       </div>
-      yearly
+      <span>Yearly</span>
+      <span class="discount-pill">Save ~17%</span>
     </div>
 
     <div class="pricing-options">
@@ -23,7 +24,7 @@ import PriceCard from './PriceCard.astro';
         price="0"
         frequency="per <br> month"
         featuresLabel="Features:"
-        features={['5 team members', 'Unlimited content', 'Unlimited hosting', 'Custom branding', 'Inline editor (coming soon)']}
+        features={['Up to 5 team members', 'Topic-based authoring', 'Starter in-templates', 'Unlimited hosting', 'Custom branding']}
         ctaText="Choose Small"
         ctaHref="https://app.corilla.com/register?plan=SMALL"
       />
@@ -34,9 +35,11 @@ import PriceCard from './PriceCard.astro';
         price="45"
         frequency="per <br> month"
         featuresLabel="Small-tier plus:"
-        features={['Upgraded to 25 team members', 'Custom domain', 'Email support', 'Admin tools (coming soon)', 'Integrations (coming soon)']}
+        features={['Up to 25 team members', 'Custom domain', 'Full template library', 'Single-source publishing', 'Version control & drafts', 'Email support']}
         ctaText="Choose Medium"
         ctaHref="https://app.corilla.com/register?plan=MEDIUM"
+        badge="Most Popular"
+        highlight={true}
       />
       <PriceCard
         id="largeplan"
@@ -45,7 +48,7 @@ import PriceCard from './PriceCard.astro';
         price="270"
         frequency="per <br> month"
         featuresLabel="Medium-tier plus:"
-        features={['Upgraded to 100 team members', 'Custom styles', 'Phone support', 'Reporting tools (coming soon)', 'Content analytics (coming soon)']}
+        features={['Up to 100 team members', 'Custom design themes', 'Role-based access & permissions', 'Multi-channel export (Web & PDF)', 'Dedicated onboarding', 'Priority support']}
         ctaText="Choose Large"
         ctaHref="https://app.corilla.com/register?plan=LARGE"
       />
@@ -110,14 +113,28 @@ import PriceCard from './PriceCard.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3em 1em 0em 1em;
+    margin: 2.5em 0 0 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0B2C3E;
+    gap: 0.5em;
+  }
+
+  .discount-pill {
+    background: #0B2C3E;
+    color: #F7D33A;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2em 0.6em;
+    border-radius: 12px;
+    margin-left: 0.5em;
   }
 
   .onoffswitch {
     position: relative;
-    width: 60px;
+    width: 54px;
     user-select: none;
-    margin: 0 0.8em;
+    margin: 0 0.5em;
   }
 
   .onoffswitch-checkbox {
@@ -128,77 +145,74 @@ import PriceCard from './PriceCard.astro';
     display: block;
     overflow: hidden;
     cursor: pointer;
-    height: 36px;
+    height: 30px;
     padding: 0;
-    line-height: 36px;
-    border: 2px solid #F2D800;
-    border-radius: 36px;
-    background-color: #F2D800;
+    line-height: 30px;
+    border: 2px solid #F7D33A;
+    border-radius: 30px;
+    background-color: #F7D33A;
     transition: background-color 0.3s ease-in;
   }
 
   .onoffswitch-label::before {
     content: "";
     display: block;
-    width: 36px;
+    width: 26px;
+    height: 26px;
     margin: 0px;
     background: #FFFFFF;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 22px;
-    border: 2px solid #F2D800;
-    border-radius: 36px;
+    top: 2px;
+    bottom: 2px;
+    right: 26px;
+    border-radius: 50%;
     transition: all 0.3s ease-in 0s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
 
   .onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #F2D800;
-  }
-
-  .onoffswitch-checkbox:checked + .onoffswitch-label,
-  .onoffswitch-checkbox:checked + .onoffswitch-label::before {
-    border-color: #F2D800;
+    background-color: #0B2C3E;
+    border-color: #0B2C3E;
   }
 
   .onoffswitch-checkbox:checked + .onoffswitch-label::before {
-    right: 0px;
+    right: 2px;
+    background: #F7D33A;
   }
 
   .pricing-options {
     padding-top: 4em;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: row;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    gap: 2em;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   #custom {
-    padding-top: 0em;
+    padding-top: 2em;
     padding-bottom: 4em;
     text-align: center;
   }
 
   #custom h3 {
+    font-size: 1.5rem;
+    color: #0B2C3E;
     padding-bottom: 0.3em;
   }
 
   #custom p {
+    color: #5F6F78;
     padding-bottom: 3em;
-  }
-
-  @media screen and (max-width: 1210px) {
-    .section-content {
-      width: 100%;
-    }
   }
 
   @media screen and (max-width: 900px) {
     .pricing-options {
-      padding-left: 2em;
-      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>

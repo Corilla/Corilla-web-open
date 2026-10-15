@@ -1,0 +1,243 @@
+---
+// HowTopicsWork.astro - Visual explanation of the topic-based single-sourcing model
+---
+
+<section id="how-it-works">
+  <div class="section-content">
+    <div class="section-header">
+      <span class="eyebrow">THE TOPIC-BASED ADVANTAGE</span>
+      <h2>How topic-based authoring works</h2>
+      <p>Traditional wikis and monolithic docs lead to copy-paste drift. Corilla organizes content into discrete, reusable topics that stay in sync everywhere.</p>
+    </div>
+
+    <div class="steps-container">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-badge">Step 01</div>
+        <div class="step-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <h3>Choose an In-Template</h3>
+        <p>Never start with a blank screen. Choose from structured templates for Tasks, Concepts, References, API docs, and Release Notes.</p>
+        <div class="pill-group">
+          <span class="mini-pill">Task</span>
+          <span class="mini-pill">Concept</span>
+          <span class="mini-pill">API Reference</span>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="step-arrow">⟶</div>
+
+      <!-- Step 2 -->
+      <div class="step-card active">
+        <div class="step-badge active-badge">Step 02</div>
+        <div class="step-icon active-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <h3>Author in Clean Markdown</h3>
+        <p>Write focused, single-purpose topics. Each topic is self-contained, version-controlled, and tagged for multi-publication reuse.</p>
+        <div class="code-snippet">
+          <code># Topic: Authentication<br/>type: task | status: approved</code>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="step-arrow">⟶</div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-badge">Step 03</div>
+        <div class="step-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3>Single-Source Everywhere</h3>
+        <p>Update a topic once and publish everywhere. Your changes propagate automatically to developer portals, PDF guides, and runbooks.</p>
+        <div class="pill-group">
+          <span class="mini-pill">Web Portal</span>
+          <span class="mini-pill">PDF Docs</span>
+          <span class="mini-pill">In-App Help</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #how-it-works {
+    padding: 7em 1.5em;
+    background: #FFFFFF;
+    border-bottom: 1px solid #F0F2F4;
+  }
+
+  .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4em;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #8B7500;
+    margin-bottom: 0.75em;
+  }
+
+  .section-header h2 {
+    font-size: 2.25rem;
+    color: #0B2C3E;
+    margin-bottom: 0.4em;
+    line-height: 1.25;
+  }
+
+  .section-header p {
+    color: #5F6F78;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .steps-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1.5em;
+  }
+
+  .step-card {
+    flex: 1;
+    background: #FAFBFC;
+    border: 1px solid #E5E9EC;
+    border-radius: 12px;
+    padding: 2.5em 2em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -8px rgba(11, 44, 62, 0.08);
+    border-color: #CBD5DC;
+  }
+
+  .step-card.active {
+    background: #FFFFFF;
+    border: 2px solid #F7D33A;
+    box-shadow: 0 16px 32px -8px rgba(247, 211, 58, 0.2), 0 4px 12px rgba(11, 44, 62, 0.04);
+  }
+
+  .step-badge {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7F919A;
+    background: #EDF1F4;
+    padding: 0.2em 0.6em;
+    border-radius: 6px;
+  }
+
+  .step-badge.active-badge {
+    background: #0B2C3E;
+    color: #F7D33A;
+  }
+
+  .step-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: #EDF1F4;
+    color: #0B2C3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+  }
+
+  .step-icon.active-icon {
+    background: #F7D33A;
+    color: #0B2C3E;
+  }
+
+  .step-card h3 {
+    font-size: 1.375rem;
+    color: #0B2C3E;
+    margin-bottom: 0.75em;
+  }
+
+  .step-card p {
+    color: #5F6F78;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    flex-grow: 1;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  .mini-pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: #FFFFFF;
+    border: 1px solid #D4D8DD;
+    padding: 0.3em 0.7em;
+    border-radius: 20px;
+    color: #0B2C3E;
+  }
+
+  .code-snippet {
+    background: #0B2C3E;
+    color: #F7D33A;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    padding: 0.6em 0.8em;
+    border-radius: 6px;
+    line-height: 1.4;
+  }
+
+  .step-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #B4C0C8;
+    user-select: none;
+  }
+
+  @media screen and (max-width: 900px) {
+    .steps-container {
+      flex-direction: column;
+    }
+    .step-arrow {
+      transform: rotate(90deg);
+      margin: 0.25em 0;
+    }
+  }
+</style>
