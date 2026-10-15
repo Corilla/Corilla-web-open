@@ -9,12 +9,15 @@ interface Props {
   features: string[];
   ctaText: string;
   ctaHref: string;
+  badge?: string;
+  highlight?: boolean;
 }
 
-const { id, name, description, price, frequency, featuresLabel, features, ctaText, ctaHref } = Astro.props;
+const { id, name, description, price, frequency, featuresLabel, features, ctaText, ctaHref, badge, highlight = false } = Astro.props;
 ---
 
-<div id={id} class="price-option">
+<div id={id} class:list={['price-option', { 'is-highlighted': highlight }]}>
+  {badge && <div class="badge">{badge}</div>}
   <div class="description">
     <h3>{name}</h3>
     <p>{description}</p>
@@ -29,21 +32,51 @@ const { id, name, description, price, frequency, featuresLabel, features, ctaTex
       {features.map((f) => <li>{f}</li>)}
     </ul>
   </div>
-  <a class="button" href={ctaHref}>{ctaText}</a>
+  <a class:list={['button', { 'button-highlight': highlight }]} href={ctaHref}>{ctaText}</a>
 </div>
 
 <style>
   .price-option {
-    padding: 0.75em;
-    border: 2px solid #D4D8DD;
+    padding: 1.25em 1em 1em;
+    border: 2px solid #E5E9EC;
+    background: #FFFFFF;
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
     text-align: center;
-    width: 18em;
-    border-radius: 2px;
+    width: 19em;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .price-option:hover {
+    border-color: #B4C0C8;
+    box-shadow: 0 12px 24px -8px rgba(11, 44, 62, 0.08);
+  }
+
+  .price-option.is-highlighted {
+    border: 2px solid #F7D33A;
+    box-shadow: 0 16px 32px -8px rgba(247, 211, 58, 0.25), 0 4px 12px rgba(11, 44, 62, 0.05);
+    transform: translateY(-4px);
+  }
+
+  .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0B2C3E;
+    color: #F7D33A;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 0.25em 0.85em;
+    border-radius: 12px;
+    white-space: nowrap;
+    text-transform: uppercase;
   }
 
   .price-option + :global(.price-option) {

@@ -1,5 +1,22 @@
 <section id="video-explanation">
-  <div class="video-wrapper">
+  <div class="video-section-header">
+    <span class="eyebrow">SEE CORILLA IN ACTION</span>
+    <h2>Watch how topic-based publishing works</h2>
+    <p>From single-source editing to multi-channel deployment in under two minutes.</p>
+  </div>
+
+  <div class="browser-mockup">
+    <div class="browser-header">
+      <div class="window-controls">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="browser-address-bar">
+        <span class="lock-icon">🔒</span>
+        <span class="address">app.corilla.com/editor/demo</span>
+      </div>
+    </div>
     <div class="video-container">
       <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
         <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
@@ -19,34 +36,107 @@
       </div>
       <script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
     </div>
-    <img src="/assets/img/computer-video.svg" alt="Computer frame" width="902" height="520" />
   </div>
 </section>
 
 <style>
   #video-explanation {
+    padding: 6em 1.5em;
     text-align: center;
+    background: #FAFBFC;
   }
 
-  .video-wrapper {
+  .video-section-header {
+    max-width: 650px;
+    margin: 0 auto 3.5em;
+  }
+
+  .eyebrow {
     display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #8B7500;
+    margin-bottom: 0.75em;
+  }
+
+  .video-section-header h2 {
+    font-size: 2rem;
+    color: #0B2C3E;
+    margin-bottom: 0.4em;
+  }
+
+  .video-section-header p {
+    color: #5F6F78;
+    font-size: 1.125rem;
+  }
+
+  .browser-mockup {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid #D4D8DD;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px -12px rgba(11, 44, 62, 0.12), 0 4px 12px rgba(11, 44, 62, 0.04);
+  }
+
+  .browser-header {
+    background: #F6F7F8;
+    border-bottom: 1px solid #E5E9EC;
+    padding: 0.75em 1.25em;
+    display: flex;
+    align-items: center;
     position: relative;
+  }
+
+  .window-controls {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot.red { background: #FF5F56; }
+  .dot.yellow { background: #FFBD2E; }
+  .dot.green { background: #27C93F; }
+
+  .browser-address-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    border: 1px solid #D4D8DD;
+    border-radius: 6px;
+    padding: 0.25em 1.25em;
+    font-size: 0.8125rem;
+    color: #5F6F78;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .lock-icon {
+    font-size: 0.75rem;
   }
 
   .video-container {
-    position: absolute;
-    width: 67.7%;
-    height: 100%;
-    left: 16.1%;
-    top: 11.5%;
+    position: relative;
+    width: 100%;
+    background: #0B2C3E;
   }
 
-  img {
-    display: block;
-    margin: auto;
-    max-width: 90%;
-    position: relative;
-    z-index: 100;
-    pointer-events: none;
+  @media screen and (max-width: 640px) {
+    .browser-address-bar {
+      display: none;
+    }
+    .video-section-header h2 {
+      font-size: 1.625rem;
+    }
   }
 </style>

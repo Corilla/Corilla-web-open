@@ -1,0 +1,94 @@
+---
+// SocialProof.astro - Trust and social proof banner
+---
+
+<section id="social-proof">
+  <div class="proof-container">
+    <p class="proof-label">BORN OUT OF RED HAT & ACCELERATED BY NUMA PARIS — TRUSTED BY TEAMS IN 80+ COUNTRIES</p>
+    <div class="logo-row">
+      <div class="proof-item">
+        <span class="proof-brand">RED HAT</span>
+        <span class="proof-note">Origin Story</span>
+      </div>
+      <div class="divider">•</div>
+      <div class="proof-item">
+        <span class="proof-brand">GOOGLE LAUNCHPAD</span>
+        <span class="proof-note">Paris Accelerator</span>
+      </div>
+      <div class="divider">•</div>
+      <div class="proof-item">
+        <span class="proof-brand">NUMA SPRINT</span>
+        <span class="proof-note">Alumni</span>
+      </div>
+      <div class="divider">•</div>
+      <div class="proof-item">
+        <span class="proof-brand">HIPPO VENTURES</span>
+        <span class="proof-note">Backed by Bob Young</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #social-proof {
+    background: #FFFFFF;
+    border-bottom: 1px solid #F0F2F4;
+    padding: 2.25em 1.5em;
+    text-align: center;
+  }
+
+  .proof-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .proof-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #7F919A;
+    margin-bottom: 1.25em;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+  }
+
+  .proof-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15em;
+  }
+
+  .proof-brand {
+    font-family: 'Sailec-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #0B2C3E;
+  }
+
+  .proof-note {
+    font-size: 0.6875rem;
+    color: #8B7500;
+  }
+
+  .divider {
+    color: #D4D8DD;
+    font-size: 0.875rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    .divider {
+      display: none;
+    }
+    .logo-row {
+      gap: 1em;
+    }
+  }
+</style>
