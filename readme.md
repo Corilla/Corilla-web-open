@@ -4,7 +4,7 @@ Marketing site for [corilla.com](https://www.corilla.com), built with [Astro](ht
 
 ## Stack
 
-- **Framework:** Astro 6 (static output)
+- **Framework:** Astro 7 (static output)
 - **Styling:** Tailwind CSS 4
 - **Hosting:** Vercel (`@astrojs/vercel` adapter)
 

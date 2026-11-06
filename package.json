@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/vercel": "^11.0.14",
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.8",
-    "tailwindcss": "^4.3.3"
+    "@astrojs/vercel": "^11.0.20",
+    "@tailwindcss/vite": "^4.3.4",
+    "astro": "^7.4.7",
+    "tailwindcss": "^4.3.4"
   },
   "overrides": {
-    "path-to-regexp": "^6.3.0"
+    "path-to-regexp": "^6.3.0",
+    "@vercel/nft": {
+      "glob": "^14.0.4"
+    }
   }
 }
